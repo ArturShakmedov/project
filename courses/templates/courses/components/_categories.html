@@ -1,0 +1,29 @@
+{% load courses_tags %}
+<div class="ag-courses_box">
+    {% get_categories as categories %}
+    {% for category in categories %}
+    <div class="ag-courses_item">
+      <a href="{% url 'category' category.pk %}" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg" style="  height: 128px;
+  width: 128px;
+  background-color: {{ category.theme }};
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;"></div>
+
+        <div class="ag-courses-item_title">
+          {{ category.title }}
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>

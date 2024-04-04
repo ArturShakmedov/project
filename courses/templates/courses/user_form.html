@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block main %}
+<div class="d-flex justify-content-center">
+  <div class="card bg-dark text-light col-8 p-4 mt-5">
+    <form action="" method="post" enctype="multipart/form-data">
+      <h1 class="text-light text-center">{{ title }}</h1>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">
+        {% if 'register' in request.path %}
+        Зарегистрироваться
+        {% else %}
+        Войти в аккаунт
+        {% endif %}
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock main %}

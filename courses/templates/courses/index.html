@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    <h2 class="text-light mt-5">Категории: </h2>
+    {% include 'courses/components/_categories.html' %}
+
+    <h2 class="text-light mt-5">Последние статьи: </h2>
+    {% for article in articles %}
+        {% include 'courses/components/_article_card.html' %}
+    {% endfor %}
+
+{% endblock main %}
+
+
